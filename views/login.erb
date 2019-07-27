@@ -1,0 +1,20 @@
+<h1>Login</h1>
+
+<% if @error %>
+  <div class="error">Login failed.</div>
+<% end %>
+
+<% if current_user %>
+  <%= current_user %>
+  <a href="/login">ログインページへ</a>
+  <a href="/logout">ログアウトする</a>
+<% end %>
+
+<form action="/login" method="post">
+
+  <input type="text" name="username" placeholder="Username" />
+  <input type="password" name="password" placeholder="Password" />
+
+  <input type="submit" name="button" value="Login" />
+
+</form>
